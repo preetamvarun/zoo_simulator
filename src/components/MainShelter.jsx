@@ -4,11 +4,11 @@ import MonkeyShelter from "./MonkeyShelter";
 
 const MainShelter = () => {
     return (
-        <div>
+        <>
             <MonkeyShelter/>
             <GiraffeShelter/>
             <ElephantShelter/>
-        </div>
+        </>
     )
 }
 

@@ -1,8 +1,11 @@
 import React from 'react'
+import MonkeyCard from './MonkeyCard';
 
 const MonkeyShelter = () => {
   return (
-    <div>MonkeyShelter</div>
+    <div>
+      <MonkeyCard/>
+    </div>
   )
 }
 

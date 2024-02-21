@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import GiraffeCard from './GiraffeCard';
 
 const GiraffeShelter = () => {
   return (
-    <div>GiraffeShelter</div>
+    <div>
+      <GiraffeCard/>
+    </div>
   )
 }
 

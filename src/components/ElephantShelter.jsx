@@ -1,8 +1,11 @@
 import React from 'react'
+import ElephantCard from './ElephantCard';
 
 const ElephantShelter = () => {
   return (
-    <div>ElephantShelter</div>
+    <div>
+      <ElephantCard/>
+    </div>
   )
 }
 
