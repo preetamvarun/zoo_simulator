@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client.js";
-import MainShelter from "./components/MainShelter";
+import MainShelter from "./MainShelter";
 
 const App = () => {
     return (
