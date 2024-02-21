@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client.js";
+import MainShelter from "./components/MainShelter";
 
 const App = () => {
     return (
         <div>
-            <p style={{color : 'red'}}>This is a zoo simulator</p>
+            <MainShelter/>
         </div>
     )
 }
