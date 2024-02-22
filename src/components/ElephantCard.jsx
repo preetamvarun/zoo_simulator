@@ -1,16 +1,17 @@
-import React from 'react'
+import React from 'react';
+import elephantHealthy from '../Images/elephantHealthy.jpg';
 
 const ElephantCard = ({health}) => {
   return (
     <div className='border-2 border-solid border-orange-500'>
 
       {/* Elephant Image Goes In Here */}
-      <div>
-
+      <div className='border-2 border-solid border-yellow-400 m-1 w-[200px] h-[200px] flex flex-row items-center justify-center'>
+        <img src={elephantHealthy} className = 'max-w-full max-h-full w-full h-auto' alt='healthy-elephant'/> 
       </div>
 
       {/* Contents Of The Card */}
-      <div>
+      <div className='border-2 border-solid border-violet-400 m-1'>
         <p> Type : Elephant </p>
         <p> Health Percentage : {health}%</p>
         <p> Status : </p>
