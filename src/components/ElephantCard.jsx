@@ -1,7 +1,19 @@
 import React, { useEffect } from 'react';
 import elephantHealthy from '../Images/elephantHealthy.jpg';
 
-const ElephantCard = ({health}) => {
+import {useDispatch, useSelector} from 'react-redux';
+
+import { setElephantStatus } from '../utils/elephantStatusSlice';
+
+const ElephantCard = ({health, index}) => {
+
+  const elephantStatusSlice = useSelector((store) => store.elephantStatus)
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(setElephantStatus({health, index}))
+  }, [health])
 
   return (
     <div className='shadow-lg w-[200px]'>
@@ -15,7 +27,7 @@ const ElephantCard = ({health}) => {
       <div className='border-2 border-solid border-violet-400 m-1'>
         <p> Type : Elephant </p>
         <p> Health Percentage : {health}%</p>
-        <p> Status : </p>
+        <p> Status : {elephantStatusSlice.elephantsStatus[index].status}</p>
       </div>
 
     </div>

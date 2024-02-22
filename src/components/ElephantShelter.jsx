@@ -7,7 +7,8 @@ const ElephantShelter = ({ elephantsHealth }) => {
   return (
     <div className='rounded-md py-2 flex flex-row justify-evenly'>
       {
-        elephantsHealth.map((eachElephantHealth) => <ElephantCard health = {eachElephantHealth} key={uuidv4()}/>)
+        elephantsHealth.map((eachElephantHealth, index) => <ElephantCard health = {eachElephantHealth} key={uuidv4()} 
+        index = {index}/>)
       }
     </div>
   )
