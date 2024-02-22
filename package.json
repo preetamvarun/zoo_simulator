@@ -16,6 +16,8 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@types/react": "^18.2.57",
+    "@types/uuid": "^9.0.8",
     "parcel": "^2.11.0",
     "postcss": "^8.4.35",
     "process": "^0.11.10",
