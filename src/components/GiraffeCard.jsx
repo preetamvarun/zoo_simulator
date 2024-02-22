@@ -4,8 +4,9 @@ import giraffeHealthy from '../Images/giraffeHealthy.jpg';
 
 
 const GiraffeCard = ({health}) => {
+  const status = health < 30 ? "dead" : "healthy";
   return (
-    <div className='border-2 border-solid border-red-500 w-[200px]'>
+    <div className='shadow-lg w-[200px]'>
 
         {/* Giraffe Image Goes In Here */}
       <div className='border-2 border-solid border-yellow-400 m-1 h-[170px] flex flex-row items-center justify-center'>
@@ -16,7 +17,7 @@ const GiraffeCard = ({health}) => {
       <div className='border-2 border-solid border-violet-400 m-1'>
         <p> Type : Giraffe </p>
         <p> Health Percentage : {health}%</p>
-        <p> Status : </p>
+        <p> Status : {status}</p>
       </div>
 
     </div>
