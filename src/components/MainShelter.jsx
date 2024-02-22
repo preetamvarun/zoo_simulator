@@ -3,37 +3,42 @@ import GiraffeShelter from "./GiraffeShelter";
 import MonkeyShelter from "./MonkeyShelter";
 import { useEffect, useState } from "react";
 
+import {useDispatch, useSelector} from 'react-redux';
+
+import { updateAnimalsHealth } from "../utils/animalsHealthSlice";
+
 const MainShelter = () => {
 
-    /* Intially Healths Of Monkeys, Giraffes & Elephants are at 100% */
-    const [health, setHealth] = useState([[100,100,100,100,100],[100,100,100,100,100],[100,100,100,100,100]]);
+    // Getting the state object in the animalsHealthSlice 
+    const animalsHealthSlice = useSelector((store) => store.animalsHealth)
 
-    const updateHealthRandomly = () => {
-        const updatedHealth = health.map((animalHealths) => {
-            return animalHealths.map((health) => {
+    const currentAnimalsHealth = animalsHealthSlice.animalsHealth;
+
+    const dispatch = useDispatch();
+
+    const updateAnimalsHealthRandomly = () => {
+        const updatedAnimalsHealth = currentAnimalsHealth.map((animalBreed) => {
+            return animalBreed.map((eachAnimalHealth) => {
                 const randomPercentage = Math.random() * 20;
-                const reducedHealth = Math.max(0, health - (health * randomPercentage)/100);
+                const reducedHealth = Math.max(0, eachAnimalHealth - (eachAnimalHealth * randomPercentage)/100);
                 return parseFloat(reducedHealth.toFixed(2));
             })
         })
-        setHealth(updatedHealth);
+        dispatch(updateAnimalsHealth(updatedAnimalsHealth));
     }
 
     useEffect(() => {
-
-        const intervalId = setInterval(() => {
-            updateHealthRandomly()
-        }, 7000)
-
-        return () => clearInterval(intervalId)
-
-    }, [health])
+        const intervalID = setInterval(() => {
+            updateAnimalsHealthRandomly();
+        }, 7000);
+        return () => clearInterval(intervalID);
+    }, [animalsHealthSlice])
 
     return (
         <>
-            <ElephantShelter elephantsHealth = {health[0]}/>
-            <MonkeyShelter monkeysHealth = {health[1]}/>
-            <GiraffeShelter giraffesHealth = {health[2]}/>
+            <ElephantShelter elephantsHealth = {currentAnimalsHealth[0]}/>
+            <MonkeyShelter monkeysHealth = {currentAnimalsHealth[1]}/>
+            <GiraffeShelter giraffesHealth = {currentAnimalsHealth[2]}/>
         </>
     )
 }
