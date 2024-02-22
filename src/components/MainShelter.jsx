@@ -10,9 +10,9 @@ const MainShelter = () => {
 
     return (
         <>
-            <MonkeyShelter monkeysHealth = {health[0]}/>
-            <GiraffeShelter giraffesHealth = {health[1]}/>
-            <ElephantShelter elephantsHealth = {health[2]}/>
+            <ElephantShelter elephantsHealth = {health[0]}/>
+            <MonkeyShelter monkeysHealth = {health[1]}/>
+            <GiraffeShelter giraffesHealth = {health[2]}/>
         </>
     )
 }
