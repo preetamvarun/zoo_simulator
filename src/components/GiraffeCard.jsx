@@ -27,8 +27,7 @@ const GiraffeCard = ({health, index}) => {
 
       {/* Contents Of The Card */}
       <div className='border-2 border-solid border-violet-400 m-1'>
-        <p> Type : Giraffe </p>
-        <p> Health Percentage : {health}%</p>
+        <p> Health : {health}%</p>
         <p> Status : {giraffeStatusSlice.giraffesStatus[index].status}</p>
       </div>
 

@@ -23,8 +23,7 @@ const MonkeyCard = ({health, index}) => {
 
       {/* contents of the card */}
       <div className='border-2 border-solid border-violet-400 m-1'>
-        <p> Type : Monkey </p>
-        <p> Health Percentage : {health}%</p>
+        <p> Health : {health}%</p>
         <p> Status : {monkeyStatusSlice.monkeysStatus[index].status}</p>
         
       </div>
