@@ -1,8 +1,6 @@
 import React from 'react';
 import GiraffeCard from './GiraffeCard';
 import { v4 as uuidv4 } from 'uuid';
-import {useSelector, useDispatch} from 'react-redux';
-
 
 /* This Giraffe Shelter Component renders 5 different monkeys */
 const GiraffeShelter = ({ giraffesHealth }) => {
