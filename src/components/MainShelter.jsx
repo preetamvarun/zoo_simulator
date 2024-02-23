@@ -58,7 +58,7 @@ const MainShelter = () => {
         feedAnimals();
         evt.preventDefault();
     }
-
+    
 
     return (
         <>
