@@ -20,7 +20,7 @@ const MonkeyCard = ({health, index}) => {
   const currentMonkeyStatus = monkeyStatusSlice.monkeysStatus[index].status;
 
   return (
-    <div className='shadow-lg w-[200px]'>
+    <div className='shadow-lg w-[200px] font-mono text-md'>
 
       {/* This div contains the monkey image */}
       <div className='border-2 border-solid border-yellow-400 m-1 h-[170px] flex flex-row items-center justify-center'>

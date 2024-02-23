@@ -45,7 +45,7 @@ const MainShelter = () => {
     useEffect(() => {
         const intervalID = setInterval(() => {
             updateAnimalsHealthRandomly();
-        }, 4000);
+        }, 4000000);
         return () => clearInterval(intervalID);
     }, [animalsHealthSlice])
 
@@ -58,7 +58,7 @@ const MainShelter = () => {
         feedAnimals();
         evt.preventDefault();
     }
-    
+
 
     return (
         <>

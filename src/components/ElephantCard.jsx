@@ -20,11 +20,11 @@ const ElephantCard = ({health, index}) => {
   const currentElephantStatus = elephantStatusSlice.elephantsStatus[index].status;
 
   return (
-    <div className='shadow-lg w-[200px]'>
+    <div className='shadow-xl w-[200px] font-mono text-md'>
 
       {/* Elephant Image Goes In Here */}
-      <div className='border-2 border-solid border-yellow-400 m-1 h-[170px] flex flex-row items-center justify-center'>
-        <img src={elephantHealthy} className = 'max-w-full max-h-full w-full h-auto' alt='healthy-elephant'/> 
+      <div className='overflow-hidden opacity-90 hover:opacity-100 hover:cursor-pointer duration-200 border-2 border-solid border-yellow-400 m-1 h-[170px] flex flex-row items-center justify-center'>
+        <img src={elephantHealthy} className = 'hover:scale-105 duration-200 max-w-full max-h-full w-full h-auto' alt='healthy-elephant'/> 
       </div>
 
       {/* Contents Of The Card */}
