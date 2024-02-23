@@ -1,20 +1,22 @@
 import React, { useEffect } from 'react';
 import elephantHealthy from '../Images/elephantHealthy.jpg';
-
 import {useDispatch, useSelector} from 'react-redux';
-
 import { setElephantStatus } from '../utils/elephantStatusSlice';
 
+/* Get the health of the current elephant and keep track of current elephant with the help of index */
 const ElephantCard = ({health, index}) => {
 
+  /* subscribe to the elephant status slice from the store. */
   const elephantStatusSlice = useSelector((store) => store.elephantStatus)
 
   const dispatch = useDispatch()
 
+  /* Update the status of the current elephant when the health has changed */
   useEffect(() => {
     dispatch(setElephantStatus({health, index}))
   }, [health])
 
+  /* Get the current status of the elephant from the store */
   const currentElephantStatus = elephantStatusSlice.elephantsStatus[index].status;
 
   return (

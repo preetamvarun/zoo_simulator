@@ -5,16 +5,20 @@ import { setGiraffeStatus } from '../utils/giraffeStatusSlice';
 import { useEffect } from 'react';
 
 
+/* Get the health of the current giraffe and keep track of current giraffe with the help of index */
 const GiraffeCard = ({health, index}) => {
 
+  /* subscribe to the giraffe status slice from the store. */
   const giraffeStatusSlice = useSelector((store) => store.giraffeStatus)
 
   const dispatch = useDispatch();
 
+  /* Update the status of the current giraffe when the health has changed */
   useEffect(() => {
     dispatch(setGiraffeStatus({health, index}))
   }, [health])
 
+  /* Get the current status of the giraffe from the store */
   const currentGiraffeStatus = giraffeStatusSlice.giraffesStatus[index].status;
 
 

@@ -3,16 +3,20 @@ import monkeyHealthy from '../Images/monkeyHealthy.jpg';
 import {useSelector, useDispatch} from 'react-redux';
 import { setMonkeyStatus } from '../utils/monkeyStatusSlice';
 
+/* Get the health of the current monkey and keep track of current monkey with the help of index */
 const MonkeyCard = ({health, index}) => {
 
+  /* subscribe to the monkey status slice from the store */
   const monkeyStatusSlice = useSelector((store) => store.monkeyStatus)
 
   const dispatch = useDispatch();
 
+  /* Update the status of the current monkey when the health has changed */
   useEffect(() => {
     dispatch(setMonkeyStatus({health, index}))
   }, [health])
 
+  /* Get the current status of the monkey */
   const currentMonkeyStatus = monkeyStatusSlice.monkeysStatus[index].status;
 
   return (
@@ -28,7 +32,6 @@ const MonkeyCard = ({health, index}) => {
         {/* Display health percentage only if the monkey is alive */}
         {currentMonkeyStatus !== "Dead" && <p> Health : {health}%</p> }
         <p> Status : {currentMonkeyStatus}</p>
-        
       </div>
 
     </div>
