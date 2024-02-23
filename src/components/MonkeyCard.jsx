@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import monkeyHealthy from '../Images/monkeyHealthy.jpg';
+// import monkeyHealthy from '../Images/monkeyHealthy.jpg';
+import MonkeyHealthy from '../Images/MonkeyHealthy.svg';
 import {useSelector, useDispatch} from 'react-redux';
 import { setMonkeyStatus } from '../utils/monkeyStatusSlice';
 
@@ -20,11 +21,11 @@ const MonkeyCard = ({health, index}) => {
   const currentMonkeyStatus = monkeyStatusSlice.monkeysStatus[index].status;
 
   return (
-    <div className='shadow-lg w-[200px] font-mono text-md'>
+    <div className='shadow-lg font-mono text-sm w-56'>
 
       {/* This div contains the monkey image */}
-      <div className='border-2 border-solid border-yellow-400 m-1 h-[170px] flex flex-row items-center justify-center'>
-        <img src={monkeyHealthy} className = 'max-w-full max-h-full w-full h-auto' alt='healthy-monkey'/> 
+      <div className='overflow-hidden opacity-95 hover:opacity-100 hover:cursor-pointer duration-200  flex flex-row items-center justify-center'>
+        <img src={MonkeyHealthy} className = 'scale-125 hover:scale-150 duration-200 max-w-full max-h-full w-full h-auto' alt='healthy-monkey'/> 
       </div>
 
       {/* contents of the card */}

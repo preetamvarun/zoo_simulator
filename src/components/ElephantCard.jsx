@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import elephantHealthy from '../Images/elephantHealthy.jpg';
+// import elephantHealthy from '../Images/elephantHealthy.jpg';
+import ElephantHealthy from '../Images/ElephantHealthy.svg';
 import {useDispatch, useSelector} from 'react-redux';
 import { setElephantStatus } from '../utils/elephantStatusSlice';
 
@@ -20,11 +21,11 @@ const ElephantCard = ({health, index}) => {
   const currentElephantStatus = elephantStatusSlice.elephantsStatus[index].status;
 
   return (
-    <div className='shadow-xl w-[200px] font-mono text-md'>
+    <div className='shadow-xl font-mono text-sm w-56'>
 
       {/* Elephant Image Goes In Here */}
-      <div className='overflow-hidden opacity-90 hover:opacity-100 hover:cursor-pointer duration-200 border-2 border-solid border-yellow-400 m-1 h-[170px] flex flex-row items-center justify-center'>
-        <img src={elephantHealthy} className = 'hover:scale-105 duration-200 max-w-full max-h-full w-full h-auto' alt='healthy-elephant'/> 
+      <div className='overflow-hidden opacity-95 hover:opacity-100 hover:cursor-pointer duration-200 flex flex-row items-center justify-center'>
+        <img src={ElephantHealthy} className = 'hover:scale-125 duration-200 max-w-full max-h-full w-full h-auto' alt='healthy-elephant'/> 
       </div>
 
       {/* Contents Of The Card */}

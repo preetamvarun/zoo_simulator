@@ -1,5 +1,6 @@
 import React from 'react';
-import giraffeHealthy from '../Images/giraffeHealthy.jpg';
+// import giraffeHealthy from '../Images/giraffeHealthy.jpg';
+import GiraffeHealthy from '../Images/GiraffeHealthyNew.svg';
 import {useSelector, useDispatch} from 'react-redux';
 import { setGiraffeStatus } from '../utils/giraffeStatusSlice';
 import { useEffect } from 'react';
@@ -23,11 +24,11 @@ const GiraffeCard = ({health, index}) => {
 
 
   return (
-    <div className='shadow-lg w-[200px] font-mono text-md'>
+    <div className='shadow-lg font-mono text-sm w-56'>
 
         {/* Giraffe Image Goes In Here */}
-      <div className='overflow-hidden opacity-90 hover:opacity-100 hover:cursor-pointer duration-200 border-2 border-solid border-yellow-400 m-1 h-[170px] flex flex-row items-center justify-center'>
-        <img src={giraffeHealthy} className = 'hover:scale-105 duration-200 max-w-full max-h-full w-full h-auto' alt='healthy-giraffe'/> 
+      <div className='overflow-hidden opacity-95 hover:opacity-100 hover:cursor-pointer duration-200 flex flex-row items-center justify-center'>
+        <img src={GiraffeHealthy} className = 'scale-125 hover:scale-150 duration-200 max-w-full max-h-full w-full h-auto' alt='healthy-giraffe'/> 
       </div>
 
       {/* Contents Of The Card */}
