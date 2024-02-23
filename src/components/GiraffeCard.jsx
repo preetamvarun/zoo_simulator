@@ -1,10 +1,22 @@
 import React from 'react';
 import giraffeHealthy from '../Images/giraffeHealthy.jpg';
+import {useSelector, useDispatch} from 'react-redux';
+import { setGiraffeStatus } from '../utils/giraffeStatusSlice';
+import { useEffect } from 'react';
+
+
+const GiraffeCard = ({health, index}) => {
+
+  const giraffeStatusSlice = useSelector((store) => store.giraffeStatus)
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setGiraffeStatus({health, index}))
+  }, [health])
 
 
 
-const GiraffeCard = ({health}) => {
-  const status = health < 30 ? "dead" : "healthy";
   return (
     <div className='shadow-lg w-[200px]'>
 
@@ -17,7 +29,7 @@ const GiraffeCard = ({health}) => {
       <div className='border-2 border-solid border-violet-400 m-1'>
         <p> Type : Giraffe </p>
         <p> Health Percentage : {health}%</p>
-        <p> Status : {status}</p>
+        <p> Status : {giraffeStatusSlice.giraffesStatus[index].status}</p>
       </div>
 
     </div>
