@@ -30,16 +30,18 @@ const elephantStatusSlice = createSlice ({
         setElephantStatus : (state, action) => {
             const { health, index } = action.payload;
 
-            if(health > 70){
-                state.elephantsStatus[index].isConditionCritical = false;
-                state.elephantsStatus[index].status = "Healthy"
-            }
-            else if(health < 70 && !state.elephantsStatus[index].isConditionCritical){
-                state.elephantsStatus[index].isConditionCritical = true;
-                state.elephantsStatus[index].status = "Can't walk";
-            }
-            else if(health < 70 && state.elephantsStatus[index].isConditionCritical){
-                state.elephantsStatus[index].status = "Dead";
+            if(state.elephantsStatus[index].status !== "Dead") {
+                if(health > 70){
+                    state.elephantsStatus[index].isConditionCritical = false;
+                    state.elephantsStatus[index].status = "Healthy"
+                }
+                else if(health < 70 && !state.elephantsStatus[index].isConditionCritical){
+                    state.elephantsStatus[index].isConditionCritical = true;
+                    state.elephantsStatus[index].status = "Can't walk";
+                }
+                else if(health < 70 && state.elephantsStatus[index].isConditionCritical){
+                    state.elephantsStatus[index].status = "Dead";
+                }
             }
             
         }

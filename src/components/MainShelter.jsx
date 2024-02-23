@@ -28,8 +28,10 @@ const MainShelter = () => {
     }
 
     const feedAnimals = () => {
+        
+        /* Generating 3 random values one for each type of animal*/
         const feedingPercentages = Array.from({length : 3}, () => Math.floor(Math.random() * 16) + 10);
-        console.log(feedingPercentages);
+
         const updatedAnimalsHealth = currentAnimalsHealth.map((animalBreed, index) => {
             return animalBreed.map((eachAnimalHealth) => {
                 const feedingPercentage = feedingPercentages[index];
