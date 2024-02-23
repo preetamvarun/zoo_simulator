@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-/* This slice keeps track of status of every elephats*/
+/* This slice keeps track of status of every elephant*/
 
 /* Initially, all the elephants will be healthy. They will not be in critical condition */
 const elephantStatusSlice = createSlice ({

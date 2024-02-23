@@ -1,6 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-/* This slice keeps track of status of every monkeys */
+/* This slice keeps track of status of every monkey */
 
 
 /* Initially, all the monkeys will be healthy. */
