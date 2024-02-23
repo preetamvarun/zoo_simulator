@@ -15,6 +15,8 @@ const ElephantCard = ({health, index}) => {
     dispatch(setElephantStatus({health, index}))
   }, [health])
 
+  const currentElephantStatus = elephantStatusSlice.elephantsStatus[index].status;
+
   return (
     <div className='shadow-lg w-[200px]'>
 
@@ -25,8 +27,8 @@ const ElephantCard = ({health, index}) => {
 
       {/* Contents Of The Card */}
       <div className='border-2 border-solid border-violet-400 m-1'>
-        <p> Health : {health}%</p>
-        <p> Status : {elephantStatusSlice.elephantsStatus[index].status}</p>
+        {currentElephantStatus !== "Dead" && <p> Health : {health}%</p>}
+        <p> Status : {currentElephantStatus}</p>
       </div>
 
     </div>

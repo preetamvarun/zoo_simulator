@@ -1,7 +1,7 @@
 import ElephantShelter from "./ElephantShelter";
 import GiraffeShelter from "./GiraffeShelter";
 import MonkeyShelter from "./MonkeyShelter";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import {useDispatch, useSelector} from 'react-redux';
 
@@ -30,7 +30,7 @@ const MainShelter = () => {
     useEffect(() => {
         const intervalID = setInterval(() => {
             updateAnimalsHealthRandomly();
-        }, 7000);
+        }, 4000);
         return () => clearInterval(intervalID);
     }, [animalsHealthSlice])
 

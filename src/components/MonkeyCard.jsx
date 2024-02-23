@@ -13,6 +13,8 @@ const MonkeyCard = ({health, index}) => {
     dispatch(setMonkeyStatus({health, index}))
   }, [health])
 
+  const currentMonkeyStatus = monkeyStatusSlice.monkeysStatus[index].status;
+
   return (
     <div className='shadow-lg w-[200px]'>
 
@@ -23,8 +25,9 @@ const MonkeyCard = ({health, index}) => {
 
       {/* contents of the card */}
       <div className='border-2 border-solid border-violet-400 m-1'>
-        <p> Health : {health}%</p>
-        <p> Status : {monkeyStatusSlice.monkeysStatus[index].status}</p>
+        {/* Display health percentage only if the monkey is alive */}
+        {currentMonkeyStatus !== "Dead" && <p> Health : {health}%</p> }
+        <p> Status : {currentMonkeyStatus}</p>
         
       </div>
 

@@ -15,6 +15,7 @@ const GiraffeCard = ({health, index}) => {
     dispatch(setGiraffeStatus({health, index}))
   }, [health])
 
+  const currentGiraffeStatus = giraffeStatusSlice.giraffesStatus[index].status;
 
 
   return (
@@ -27,8 +28,8 @@ const GiraffeCard = ({health, index}) => {
 
       {/* Contents Of The Card */}
       <div className='border-2 border-solid border-violet-400 m-1'>
-        <p> Health : {health}%</p>
-        <p> Status : {giraffeStatusSlice.giraffesStatus[index].status}</p>
+        {currentGiraffeStatus !== "Dead" && <p> Health : {health}%</p>}
+        <p> Status : {currentGiraffeStatus}</p>
       </div>
 
     </div>
