@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import monkeyHealthy from '../Images/monkeyHealthy.jpg';
+import {useSelector, useDispatch} from 'react-redux';
+import { setMonkeyStatus } from '../utils/monkeyStatusSlice';
 
-const MonkeyCard = ({health}) => {
-  const status = health < 30 ? "dead" : "healthy";
+const MonkeyCard = ({health, index}) => {
+
+  const monkeyStatusSlice = useSelector((store) => store.monkeyStatus)
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setMonkeyStatus({health, index}))
+  }, [health])
+
   return (
     <div className='shadow-lg w-[200px]'>
 
@@ -15,7 +25,7 @@ const MonkeyCard = ({health}) => {
       <div className='border-2 border-solid border-violet-400 m-1'>
         <p> Type : Monkey </p>
         <p> Health Percentage : {health}%</p>
-        <p> Status : {status}</p>
+        <p> Status : {monkeyStatusSlice.monkeysStatus[index].status}</p>
         
       </div>
 
