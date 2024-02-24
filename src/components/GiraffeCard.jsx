@@ -24,15 +24,15 @@ const GiraffeCard = ({health, index}) => {
 
 
   return (
-    <div className='shadow-lg font-mono text-sm w-56'>
+    <div className='font-mono text-sm w-56 shadow-md'>
 
         {/* Giraffe Image Goes In Here */}
       <div className='overflow-hidden opacity-95 hover:opacity-100 hover:cursor-pointer duration-200 flex flex-row items-center justify-center'>
-        <img src={GiraffeHealthy} className = 'scale-125 hover:scale-150 duration-200 max-w-full max-h-full w-full h-auto' alt='healthy-giraffe'/> 
+        <img src={GiraffeHealthy} className = 'scale-150 hover:scale-[170%] duration-200 max-w-full max-h-full w-full h-auto' alt='healthy-giraffe'/> 
       </div>
 
       {/* Contents Of The Card */}
-      <div className='border-2 border-solid border-violet-400 m-1'>
+      <div className='text-white font-bold'>
         {currentGiraffeStatus !== "Dead" && <p> Health : {health}%</p>}
         <p> Status : {currentGiraffeStatus}</p>
       </div>

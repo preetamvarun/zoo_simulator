@@ -21,7 +21,7 @@ const ElephantCard = ({health, index}) => {
   const currentElephantStatus = elephantStatusSlice.elephantsStatus[index].status;
 
   return (
-    <div className='shadow-xl font-mono text-sm w-56'>
+    <div className='shadow-md font-mono text-sm w-56'>
 
       {/* Elephant Image Goes In Here */}
       <div className='overflow-hidden opacity-95 hover:opacity-100 hover:cursor-pointer duration-200 flex flex-row items-center justify-center'>
@@ -29,7 +29,7 @@ const ElephantCard = ({health, index}) => {
       </div>
 
       {/* Contents Of The Card */}
-      <div className='border-2 border-solid border-violet-400 m-1'>
+      <div className='text-white font-bold'>
         {currentElephantStatus !== "Dead" && <p> Health : {health}%</p>}
         <p> Status : {currentElephantStatus}</p>
       </div>

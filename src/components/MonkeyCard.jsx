@@ -29,7 +29,7 @@ const MonkeyCard = ({health, index}) => {
       </div>
 
       {/* contents of the card */}
-      <div className='border-2 border-solid border-violet-400 m-1'>
+      <div className='text-white font-bold'>
         {/* Display health percentage only if the monkey is alive */}
         {currentMonkeyStatus !== "Dead" && <p> Health : {health}%</p> }
         <p> Status : {currentMonkeyStatus}</p>
