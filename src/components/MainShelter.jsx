@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 import {useDispatch, useSelector} from 'react-redux';
 
-import { updateAnimalsHealth } from "../utils/animalsHealthSlice";
+import { updateAnimalsHealth, updateFeedStatus } from "../utils/animalsHealthSlice";
 
 const MainShelter = () => {
 
@@ -17,6 +17,7 @@ const MainShelter = () => {
     const dispatch = useDispatch();
 
     const updateAnimalsHealthRandomly = () => {
+        dispatch(updateFeedStatus(false))
         const updatedAnimalsHealth = currentAnimalsHealth.map((animalBreed) => {
             return animalBreed.map((eachAnimalHealth) => {
                 const randomPercentage = Math.random() * 20;
@@ -40,6 +41,7 @@ const MainShelter = () => {
             })
         })
         dispatch(updateAnimalsHealth(updatedAnimalsHealth));
+        dispatch(updateFeedStatus(true));
     }
 
     useEffect(() => {

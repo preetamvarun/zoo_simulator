@@ -1,0 +1,22 @@
+@keyframes feedAnimation {
+    0%{
+        transform: translate(-66%, 50%);
+        opacity: 1;
+    }
+    40% {
+        transform: translate(20%, 50%);
+        opacity: 95%;
+    }
+    80% {
+        transform: translate(18%, 50%);
+        opacity: 90%;
+    }
+    100% {
+        transform: translate(15%, 50%);
+        opacity: 85%;
+    }
+}
+
+.animate-feed {
+    animation: feedAnimation 2s ease-out;
+}
