@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-// import elephantHealthy from '../Images/elephantHealthy.jpg';
 import ElephantHealthy from '../Images/ElephantHealthy.svg';
 import {useDispatch, useSelector} from 'react-redux';
 import { setElephantStatus } from '../utils/elephantStatusSlice';

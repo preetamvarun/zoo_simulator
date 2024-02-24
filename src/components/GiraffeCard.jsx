@@ -1,5 +1,4 @@
 import React from 'react';
-// import giraffeHealthy from '../Images/giraffeHealthy.jpg';
 import GiraffeHealthy from '../Images/GiraffeHealthyNew.svg';
 import {useSelector, useDispatch} from 'react-redux';
 import { setGiraffeStatus } from '../utils/giraffeStatusSlice';

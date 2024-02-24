@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-// import monkeyHealthy from '../Images/monkeyHealthy.jpg';
 import MonkeyHealthy from '../Images/MonkeyHealthy.svg';
 import {useSelector, useDispatch} from 'react-redux';
 import { setMonkeyStatus } from '../utils/monkeyStatusSlice';
