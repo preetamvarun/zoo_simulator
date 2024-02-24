@@ -3,12 +3,16 @@ import React, { useEffect } from 'react';
 import MonkeyHealthy from '../Images/MonkeyHealthy.svg';
 import {useSelector, useDispatch} from 'react-redux';
 import { setMonkeyStatus } from '../utils/monkeyStatusSlice';
+import '../styles/AnimateFood.css';
+import Food from '../../src/Images/Food.svg';
 
 /* Get the health of the current monkey and keep track of current monkey with the help of index */
 const MonkeyCard = ({health, index}) => {
 
   /* subscribe to the monkey status slice from the store */
   const monkeyStatusSlice = useSelector((store) => store.monkeyStatus)
+
+  const animalsFeedStatus = useSelector((store) => store.animalsHealth).areAnimalsFed
 
   const dispatch = useDispatch();
 
@@ -21,7 +25,7 @@ const MonkeyCard = ({health, index}) => {
   const currentMonkeyStatus = monkeyStatusSlice.monkeysStatus[index].status;
 
   return (
-    <div className='shadow-lg font-mono text-sm w-56'>
+    <div className='relative overflow-hidden shadow-lg font-mono text-sm w-56'>
 
       {/* This div contains the monkey image */}
       <div className='overflow-hidden opacity-95 hover:opacity-100 hover:cursor-pointer duration-200  flex flex-row items-center justify-center'>
@@ -34,6 +38,9 @@ const MonkeyCard = ({health, index}) => {
         {currentMonkeyStatus !== "Dead" && <p> Health : {health}%</p> }
         <p> Status : {currentMonkeyStatus}</p>
       </div>
+
+      <img src= {Food} className={`absolute top-0 left-[1/2] w-10/12 translate-y-1/2 -translate-x-2/3
+      ${animalsFeedStatus && 'animate-feed'}`}/>
 
     </div>
   )
