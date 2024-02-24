@@ -40,7 +40,7 @@ const MonkeyCard = ({health, index}) => {
       </div>
 
       <img src= {Food} className={`absolute top-0 left-[1/2] w-10/12 translate-y-1/2 -translate-x-2/3
-      ${animalsFeedStatus && 'animate-feed'}`}/>
+      ${animalsFeedStatus && currentMonkeyStatus !== "Dead" && 'animate-feed'}`}/>
 
     </div>
   )
