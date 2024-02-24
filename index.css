@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* src/index.css */
+
+@font-face {
+    font-family: 'JungleFever';
+    src: url('../zoo_simulator/src/fonts/JUNGLEFE.TTF') format('truetype');
+    font-weight: bold;
+    font-style: bold;
+}
+
+  

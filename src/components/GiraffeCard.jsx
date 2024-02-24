@@ -31,7 +31,7 @@ const GiraffeCard = ({health, index}) => {
 
 
   return (
-    <div className='relative font-mono text-sm w-56 overflow-hidden'>
+    <div className='relative w-56 overflow-hidden text-center'>
 
         {/* Giraffe Image Goes In Here */}
       <div className='overflow-hidden opacity-95 hover:opacity-100 hover:cursor-pointer duration-200'>
@@ -40,12 +40,12 @@ const GiraffeCard = ({health, index}) => {
 
       {/* Contents Of The Card */}
       <div className='text-white font-bold'>
-        {currentGiraffeStatus !== "Dead" && <p> Health : {health}%</p>}
+        {currentGiraffeStatus !== "DEAD" && <p> Health : {health}%</p>}
         <p> Status : {currentGiraffeStatus}</p>
       </div>
 
       <img src= {Food} className={`absolute top-0 left-[1/2] w-10/12 translate-y-1/2 -translate-x-2/3
-      ${animalsFeedStatus && currentGiraffeStatus !== "Dead" && 'animate-feed'}`}/>
+      ${animalsFeedStatus && currentGiraffeStatus !== "DEAD" && 'animate-feed'}`}/>
 
 
     </div>

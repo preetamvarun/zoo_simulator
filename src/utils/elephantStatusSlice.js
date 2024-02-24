@@ -9,23 +9,23 @@ const elephantStatusSlice = createSlice ({
         elephantsStatus : [
         {
             isConditionCritical : false, 
-            status : "Healthy"
+            status : "HEALTHY"
         },
         {
             isConditionCritical : false,
-            status : "Healthy"
+            status : "HEALTHY"
         },
         {
             isConditionCritical : false,
-            status : "Healthy"
+            status : "HEALTHY"
         },
         {
             isConditionCritical : false, 
-            status : "Healthy"
+            status : "HEALTHY"
         },
         {
             isConditionCritical : false, 
-            status : "Healthy"
+            status : "HEALTHY"
         }]
     },
     reducers : {
@@ -36,23 +36,23 @@ const elephantStatusSlice = createSlice ({
             const { health, index } = action.payload;
 
             /* Update the health of the anims only if it is alive*/
-            if(state.elephantsStatus[index].status !== "Dead") {
+            if(state.elephantsStatus[index].status !== "DEAD") {
 
                 /* If health is > 70 then it is healthy */
                 if(health > 70){
                     state.elephantsStatus[index].isConditionCritical = false;
-                    state.elephantsStatus[index].status = "Healthy"
+                    state.elephantsStatus[index].status = "HEALTHY"
                 }
 
                 /* When health falls below 70 when it is healthy It can't walk */
                 else if(health < 70 && !state.elephantsStatus[index].isConditionCritical){
                     state.elephantsStatus[index].isConditionCritical = true;
-                    state.elephantsStatus[index].status = "Can't walk";
+                    state.elephantsStatus[index].status = "CAN'T WALK";
                 }
 
                 /*when health falls below 70 when it's status is already can't walk then it is dead*/
                 else if(health < 70 && state.elephantsStatus[index].isConditionCritical){
-                    state.elephantsStatus[index].status = "Dead";
+                    state.elephantsStatus[index].status = "DEAD";
                 }
             }
             

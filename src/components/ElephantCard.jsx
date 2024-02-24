@@ -25,7 +25,7 @@ const ElephantCard = ({health, index}) => {
   const currentElephantStatus = elephantStatusSlice.elephantsStatus[index].status;
 
   return (
-    <div className='relative shadow-lg font-mono text-sm w-56 overflow-hidden'>
+    <div className='relative shadow-lg text-center w-56 overflow-hidden'>
 
       {/* Elephant Image Goes In Here */}
       <div className='overflow-hidden hover:cursor-pointer duration-200 flex flex-row items-center justify-center'>
@@ -34,12 +34,12 @@ const ElephantCard = ({health, index}) => {
 
       {/* Contents Of The Card */}
       <div className='text-white font-bold'>
-        {currentElephantStatus !== "Dead" && <p> Health : {health}%</p>}
+        {currentElephantStatus !== "DEAD" && <p> Health : {health}%</p>}
         <p> Status : {currentElephantStatus}</p>
       </div>
 
       <img src= {Food} className={`absolute top-0 left-[1/2] w-10/12 translate-y-1/2 -translate-x-2/3
-      ${animalsFeedStatus && currentElephantStatus !== "Dead" && 'animate-feed'}`}/>
+      ${animalsFeedStatus && currentElephantStatus !== "DEAD" && 'animate-feed'}`}/>
 
     </div>
   )

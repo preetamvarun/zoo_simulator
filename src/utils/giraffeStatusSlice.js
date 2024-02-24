@@ -9,8 +9,8 @@ const giraffeStatusSlice = createSlice({
 
     /* Initially, all the giraffe will be healthy. */
     initialState : {
-        giraffesStatus : [{status : "Healthy"},{status : "Healthy"},
-        {status : "Healthy"},{status : "Healthy"},{status : "Healthy"}]
+        giraffesStatus : [{status : "HEALTHY"},{status : "HEALTHY"},
+        {status : "HEALTHY"},{status : "HEALTHY"},{status : "HEALTHY"}]
     },
 
     reducers : {
@@ -20,8 +20,8 @@ const giraffeStatusSlice = createSlice({
             const {health, index} = action.payload;
 
             /* update the status of the giraffe only if it is alive */
-            if(state.giraffesStatus[index].status !== "Dead")
-            state.giraffesStatus[index].status = health < 30 ?  "Dead" : "Healthy";
+            if(state.giraffesStatus[index].status !== "DEAD")
+            state.giraffesStatus[index].status = health < 30 ?  "DEAD" : "HEALTHY";
         }
     }
 

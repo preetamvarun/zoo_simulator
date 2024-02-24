@@ -6,6 +6,7 @@ import { setMonkeyStatus } from '../utils/monkeyStatusSlice';
 import '../styles/AnimateFood.css';
 import Food from '../../src/Images/Food.svg';
 import stick from '../Images/stick-1.svg';
+import TreeTrunk from '../Images/Status.svg';
 
 /* Get the health of the current monkey and keep track of current monkey with the help of index */
 const MonkeyCard = ({health, index}) => {
@@ -26,7 +27,7 @@ const MonkeyCard = ({health, index}) => {
   const currentMonkeyStatus = monkeyStatusSlice.monkeysStatus[index].status;
 
   return (
-    <div className='relative overflow-hidden font-mono text-sm w-54'>
+    <div className='relative overflow-hidden w-54 m-1'>
 
       <img src= {stick} className='absolute z-50 -top-[50px] '/> 
 
@@ -37,14 +38,18 @@ const MonkeyCard = ({health, index}) => {
       </div>
 
       {/* contents of the card */}
-      <div className='text-white font-bold text-center'>
+      <div className='text-[#FFD700] tracking-wider text-sm font-semibold text-center overflow-hidden' 
+      style={{
+        backgroundImage : `url(${TreeTrunk})`,
+        backgroundPosition : 'center'
+      }}>
         {/* Display health percentage only if the monkey is alive */}
-        {currentMonkeyStatus !== "Dead" && <p> Health : {health}%</p> }
-        <p> Status : {currentMonkeyStatus}</p>
+        {currentMonkeyStatus !== "DEAD" && <p> HEALTH : {health}%</p> }
+        <p> STATUS : {currentMonkeyStatus}</p>
       </div>
 
       <img src= {Food} className={`absolute top-0 left-[1/2] w-10/12 translate-y-1/2 -translate-x-2/3
-      ${animalsFeedStatus && currentMonkeyStatus !== "Dead" && 'animate-feed'}`}/>
+      ${animalsFeedStatus && currentMonkeyStatus !== "DEAD" && 'animate-feed'}`}/>
 
     </div>
   )

@@ -7,8 +7,8 @@ import {createSlice} from "@reduxjs/toolkit";
 const monkeyStatusSlice = createSlice({
     name : "monkeyStatusSlice",
     initialState : {
-        monkeysStatus : [{status : "Healthy"},{status : "Healthy"},
-        {status : "Healthy"},{status : "Healthy"},{status : "Healthy"}]
+        monkeysStatus : [{status : "HEALTHY"},{status : "HEALTHY"},
+        {status : "HEALTHY"},{status : "HEALTHY"},{status : "HEALTHY"}]
     },
     reducers : {
         setMonkeyStatus : (state, action) => {
@@ -17,8 +17,8 @@ const monkeyStatusSlice = createSlice({
             const {health, index} = action.payload;
 
             /* update the status of the monkey only if it is alive */
-            if(state.monkeysStatus[index].status !== "Dead")
-            state.monkeysStatus[index].status = health < 30 ?  "Dead" : "Healthy";
+            if(state.monkeysStatus[index].status !== "DEAD")
+            state.monkeysStatus[index].status = health < 30 ?  "DEAD" : "HEALTHY";
         }
     }
 })

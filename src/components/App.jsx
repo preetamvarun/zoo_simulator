@@ -4,10 +4,11 @@ import MainShelter from "./MainShelter";
 import { Provider } from 'react-redux';
 import { store } from '../utils/store.js';
 
+
 const App = () => {
     return (
         <Provider store = {store}>
-            <div>
+            <div className="font-jungle-fever">
                 <MainShelter/>
             </div>
         </Provider>
