@@ -33,12 +33,12 @@ const MonkeyCard = ({health, index}) => {
 
 
       {/* This div contains the monkey image */}
-      <div className='overflow-hidden relative hover:cursor-pointer duration-200 flex flex-row items-center justify-center'>
+      <div className='overflow-hidden relative'>
         <img src={MonkeyHealthy} className = 'scale-110 max-w-full max-h-full w-full h-auto' alt='healthy-monkey'/> 
       </div>
 
       {/* contents of the card */}
-      <div className='text-[#FFD700] tracking-wider text-sm font-semibold text-center overflow-hidden' 
+      <div className='text-[#FFD700] tracking-wider text-sm mt-1 font-semibold text-center overflow-hidden' 
       style={{
         backgroundImage : `url(${TreeTrunk})`,
         backgroundPosition : 'center'

@@ -6,6 +6,7 @@ import { setGiraffeStatus } from '../utils/giraffeStatusSlice';
 import { useEffect } from 'react';
 import Food from '../Images/Food.svg';
 import '../styles/AnimateFood.css';
+import TreeTrunk from '../Images/Status.svg';
 
 
 /* Get the health of the current giraffe and keep track of current giraffe with the help of index */
@@ -28,20 +29,21 @@ const GiraffeCard = ({health, index}) => {
 
   /* If animals are fed then animate the food */
 
-
-
   return (
     <div className='relative w-56 overflow-hidden text-center'>
 
         {/* Giraffe Image Goes In Here */}
-      <div className='overflow-hidden opacity-95 hover:opacity-100 hover:cursor-pointer duration-200'>
-        <img src={GiraffeHealthy} className = 'scale-150 hover:scale-[170%] duration-200 max-w-full max-h-full w-full h-auto' alt='healthy-giraffe'/> 
+      <div className='overflow-hidden '>
+        <img src={GiraffeHealthy} className = 'scale-150 max-w-full max-h-full w-full h-auto' alt='healthy-giraffe'/> 
       </div>
 
       {/* Contents Of The Card */}
-      <div className='text-white font-bold'>
-        {currentGiraffeStatus !== "DEAD" && <p> Health : {health}%</p>}
-        <p> Status : {currentGiraffeStatus}</p>
+      <div className='text-[#FFD700] tracking-widest text-sm mt-1 font-semibold text-center overflow-hidden' style={{
+        backgroundImage : `url(${TreeTrunk})`,
+        backgroundPosition : 'center'
+      }}>
+        {currentGiraffeStatus !== "DEAD" && <p> HEALTH : {health}%</p>}
+        <p> STATUS : {currentGiraffeStatus}</p>
       </div>
 
       <img src= {Food} className={`absolute top-0 left-[1/2] w-10/12 translate-y-1/2 -translate-x-2/3
