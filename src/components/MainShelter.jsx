@@ -4,7 +4,6 @@ import MonkeyShelter from "./MonkeyShelter";
 import { useEffect } from "react";
 import {useDispatch, useSelector} from 'react-redux';
 import { updateAnimalsHealth, updateFeedStatus } from "../utils/animalsHealthSlice";
-import provokeLeaves from '../Images/provokeLeaves2.svg';
 
 const MainShelter = () => {
 
