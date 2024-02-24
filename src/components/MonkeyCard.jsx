@@ -28,11 +28,12 @@ const MonkeyCard = ({health, index}) => {
   return (
     <div className='relative overflow-hidden font-mono text-sm w-54'>
 
-      <img src= {stick} className='absolute z-50 -top-14'/> 
+      <img src= {stick} className='absolute z-50 -top-[50px] '/> 
+
 
       {/* This div contains the monkey image */}
-      <div className='overflow-hidden relative opacity-95 hover:opacity-100 hover:cursor-pointer duration-200 flex flex-row items-center justify-center'>
-        <img src={MonkeyHealthy} className = 'scale-105 hover:scale-125 duration-200 max-w-full max-h-full w-full h-auto' alt='healthy-monkey'/> 
+      <div className='overflow-hidden relative hover:cursor-pointer duration-200 flex flex-row items-center justify-center'>
+        <img src={MonkeyHealthy} className = 'scale-110 max-w-full max-h-full w-full h-auto' alt='healthy-monkey'/> 
       </div>
 
       {/* contents of the card */}
