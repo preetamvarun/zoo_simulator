@@ -64,19 +64,12 @@ const MainShelter = () => {
         <>
             <div className="flex flex-row justify-around items-center py-2">
                 <div className="inline-block border-2 border-solid border-green-400
-                px-[12px] py-[2px]"
-                style = {{
-                    backgroundImage : `url(${provokeLeaves})`,
-                    backgroundPosition : "center",
-                }}>
+                px-[12px] py-[2px]">
                     <button onClick={handleProvoke} className="px-6 py-1 text-white"
                     >Provoke</button>
                 </div>
                 <div className="inline-block border-2 border-solid border-green-400 px-[12px] py-[2px]"
-                style = {{
-                    backgroundImage : `url(${provokeLeaves})`,
-                    backgroundPosition : "center",
-                }}>
+                >
                     <button onClick={handleFeed}  className="px-9 py-1 text-white inline-block">Feed</button>
                 </div>
             </div>
