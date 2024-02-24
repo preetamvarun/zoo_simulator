@@ -25,7 +25,7 @@ const MonkeyCard = ({health, index}) => {
   const currentMonkeyStatus = monkeyStatusSlice.monkeysStatus[index].status;
 
   return (
-    <div className='relative overflow-hidden shadow-lg font-mono text-sm w-56'>
+    <div className='relative overflow-hidden font-mono text-sm w-56 border-t-4 border-green-700 border-solid'>
 
       {/* This div contains the monkey image */}
       <div className='overflow-hidden opacity-95 hover:opacity-100 hover:cursor-pointer duration-200  flex flex-row items-center justify-center'>

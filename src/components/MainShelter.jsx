@@ -2,10 +2,9 @@ import ElephantShelter from "./ElephantShelter";
 import GiraffeShelter from "./GiraffeShelter";
 import MonkeyShelter from "./MonkeyShelter";
 import { useEffect } from "react";
-
 import {useDispatch, useSelector} from 'react-redux';
-
 import { updateAnimalsHealth, updateFeedStatus } from "../utils/animalsHealthSlice";
+import provokeLeaves from '../Images/provokeLeaves2.svg';
 
 const MainShelter = () => {
 
@@ -61,12 +60,25 @@ const MainShelter = () => {
         evt.preventDefault();
     }
 
-
     return (
         <>
-            <div>
-                <button onClick={handleProvoke} className="border-black border-[1px] m-1 px-4 py-1 border-solid bg-gray-600 text-white">Provoke</button>
-                <button onClick={handleFeed}  className="border-black border-[1px] m-1 px-4 py-1 border-solid bg-gray-600 text-white">Feed</button>
+            <div className="flex flex-row justify-around items-center py-2">
+                <div className="inline-block border-2 border-solid border-green-400
+                px-[12px] py-[2px]"
+                style = {{
+                    backgroundImage : `url(${provokeLeaves})`,
+                    backgroundPosition : "center",
+                }}>
+                    <button onClick={handleProvoke} className="px-6 py-1 text-white"
+                    >Provoke</button>
+                </div>
+                <div className="inline-block border-2 border-solid border-green-400 px-[12px] py-[2px]"
+                style = {{
+                    backgroundImage : `url(${provokeLeaves})`,
+                    backgroundPosition : "center",
+                }}>
+                    <button onClick={handleFeed}  className="px-9 py-1 text-white inline-block">Feed</button>
+                </div>
             </div>
             <MonkeyShelter monkeysHealth = {currentAnimalsHealth[1]}/>
             <ElephantShelter elephantsHealth = {currentAnimalsHealth[0]}/>

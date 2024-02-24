@@ -31,7 +31,7 @@ const GiraffeCard = ({health, index}) => {
 
 
   return (
-    <div className='relative font-mono text-sm w-56 shadow-md overflow-hidden'>
+    <div className='relative font-mono text-sm w-56 overflow-hidden'>
 
         {/* Giraffe Image Goes In Here */}
       <div className='overflow-hidden opacity-95 hover:opacity-100 hover:cursor-pointer duration-200'>
