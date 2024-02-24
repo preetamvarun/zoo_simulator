@@ -37,7 +37,7 @@ const MonkeyCard = ({health, index}) => {
       </div>
 
       {/* contents of the card */}
-      <div className='text-[#FFD700] tracking-wider text-sm mt-1 font-semibold text-center overflow-hidden' 
+      <div className='text-[#FFD700] tracking-widest text-sm mt-1 font-semibold text-center overflow-hidden' 
       style={{
         backgroundImage : `url(${TreeTrunk})`,
         backgroundPosition : 'center'
