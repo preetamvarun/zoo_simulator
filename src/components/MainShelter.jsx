@@ -66,8 +66,8 @@ const MainShelter = () => {
                 <button onClick={handleProvoke} className="border-black border-[1px] m-1 px-4 py-1 border-solid bg-gray-600 text-white">Provoke</button>
                 <button onClick={handleFeed}  className="border-black border-[1px] m-1 px-4 py-1 border-solid bg-gray-600 text-white">Feed</button>
             </div>
-            <ElephantShelter elephantsHealth = {currentAnimalsHealth[0]}/>
             <MonkeyShelter monkeysHealth = {currentAnimalsHealth[1]}/>
+            <ElephantShelter elephantsHealth = {currentAnimalsHealth[0]}/>
             <GiraffeShelter giraffesHealth = {currentAnimalsHealth[2]}/>
         </>
     )
