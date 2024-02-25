@@ -80,6 +80,7 @@ const MainShelter = () => {
 
     const handleProvoke = (evt) => {
         updateAnimalsHealthRandomly();
+        {/* Fast Forward To One Hour */}
         setCurrentTime(new Date(currentTime.getTime() + 60 * 60 * 1000));
         evt.preventDefault();
     }
@@ -100,6 +101,7 @@ const MainShelter = () => {
                 </div>
                 <p className="inline-block text-[#FFD700] tracking-wide font-black sm:text-xl text-center"> 
                 TIME - <span className="bg-white px-3 py-1 rounded-lg text-green-700">
+                {/* Display the timer with hours and minutes */}
                 {currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span></p>
                 <div className="inline-block px-[8px] py-[2px] sm:px-[12px] sm:py-[2px]
                 Btn-Feed rounded-xl overflow-hidden border-2 border-solid"
