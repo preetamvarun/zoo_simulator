@@ -1,0 +1,22 @@
+.Btn {
+    color : white;
+    position: relative;
+}
+
+.Btn::before{
+    position: absolute;
+    content: '';
+    background-color: darkgreen;
+    top : 0;
+    right : 0;
+    left : 0;
+    bottom : 0;
+    z-index: -1;
+    transform : scaleX(0);
+    transform-origin: left;
+    transition: transform 500ms ease-in;
+}
+
+.Btn:hover::before{
+    transform: scaleX(1);
+}

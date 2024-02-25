@@ -2,8 +2,9 @@ import ElephantShelter from "./ElephantShelter";
 import GiraffeShelter from "./GiraffeShelter";
 import MonkeyShelter from "./MonkeyShelter";
 import { useEffect } from "react";
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { updateAnimalsHealth, updateFeedStatus } from "../utils/animalsHealthSlice";
+import '../styles/Btn.css';
 
 const MainShelter = () => {
 
@@ -63,7 +64,7 @@ const MainShelter = () => {
         <>
             <div className="flex flex-row justify-around items-center py-2">
                 <div className="inline-block border-2 border-solid border-green-400
-                px-[12px] py-[2px]">
+                px-[12px] py-[2px] Btn">
                     <button onClick={handleProvoke} className="px-6 py-1 text-white"
                     >Provoke</button>
                 </div>
