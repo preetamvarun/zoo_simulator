@@ -8,7 +8,6 @@ import { store } from '../utils/store.js';
 const App = () => {
     return (
         <Provider store = {store}>
-            {/* Using jungle fever font for the entire application */}
             <div className="font-mono">
                 <MainShelter/>
             </div>
