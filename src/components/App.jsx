@@ -9,7 +9,7 @@ const App = () => {
     return (
         <Provider store = {store}>
             {/* Using jungle fever font for the entire application */}
-            <div className="font-jungle-fever">
+            <div className="font-mono">
                 <MainShelter/>
             </div>
         </Provider>

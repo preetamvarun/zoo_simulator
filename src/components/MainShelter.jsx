@@ -85,14 +85,15 @@ const MainShelter = () => {
     return (
         <>
             <div className="flex flex-row justify-around items-center py-2 mt-2">
-                <div className="inline-block border-2 border-solid border-green-400
-                px-[8px] py-[2px] sm:px-[12px] sm:py-[2px] Btn-Provoke">
-                    <button onClick={handleProvoke} className="px-6 py-1 text-white"
+                <div className="inline-block border-2 border-solid bg-white
+                px-[8px] py-[2px] sm:px-[12px] sm:py-[2px] Btn-Provoke rounded-xl overflow-hidden
+                ">
+                    <button onClick={handleProvoke} className="px-6 py-1 text-green-900"
                     >Provoke</button>
                 </div>
-                <p className="inline-block text-[#FFD700] sm:text-xl font-jungle-fever text-center"> TIME : {currentTime.toLocaleTimeString()}</p>
+                <p className="inline-block text-[#FFD700] tracking-wide font-black sm:text-xl text-center"> TIME - <span className="bg-white px-3 py-1 rounded-lg text-green-700">{currentTime.toLocaleTimeString()}</span></p>
                 <div className="inline-block border-2 border-solid border-green-400 px-[8px] py-[2px] sm:px-[12px] sm:py-[2px]
-                Btn-Feed"
+                Btn-Feed rounded-xl overflow-hidden"
                 >
                 <button onClick={handleFeed}  className="px-9 py-1 text-white inline-block">Feed</button>
                 </div>

@@ -29,7 +29,7 @@ const MonkeyCard = ({health, index}) => {
   return (
 
     /* If there are any overflows to this div just make sure it is hidden */
-    <div className='relative overflow-hidden lg:w-56 m-1 md:w-46'>
+    <div className='relative overflow-hidden m-1 lg:w-46 border-2 border-green-500 border-solid'>
 
       {/* Displaying the stick image to which monkey hangs */}
       <img src= {stick} className='absolute -top-4 z-50 sm:-top-6 lg:-top-[50px] md:-top-[36px]'/> 
@@ -41,7 +41,7 @@ const MonkeyCard = ({health, index}) => {
       </div>
 
       {/* contents of the card */}
-      <div className='text-[#FFD700] text-[8px] mt-2 sm:text-[10px] sm:tracking-widest md:text-sm sm:mt-1 sm:font-semibold text-center overflow-hidden' 
+      <div className='text-white rounded-xl text-[8px] mt-2 sm:text-[10px] sm:tracking-wide md:text-sm sm:mt-1 sm:font-semibold text-left px-5 py-1 overflow-hidden' 
       style={{
         backgroundImage : `url(${TreeTrunk})`,
         backgroundPosition : 'center'
