@@ -11,10 +11,12 @@ const MainShelter = () => {
     // Getting the state object in the animalsHealthSlice 
     const animalsHealthSlice = useSelector((store) => store.animalsHealth)
 
+    /* Get the current health of all the animals from the store */
     const currentAnimalsHealth = animalsHealthSlice.animalsHealth;
 
     const [currentTime, setCurrentTime] = useState(new Date());
 
+    /* Use effect function to update the timer for every one minute*/
     useEffect(() => {
         const intervalID = setInterval(() => {
             setCurrentTime(new Date());
@@ -73,7 +75,7 @@ const MainShelter = () => {
         const intervalID = setInterval(() => {
             updateAnimalsHealthRandomly();
             /* 1 hour => 60 minutes => 60 * 60 seconds => 3600 seconds => 3600 * 1000 milliseconds */
-        }, 3600 * 1000);
+        }, 3000);
         /* clear out the intervals */
         return () => clearInterval(intervalID);
     }, [animalsHealthSlice])
