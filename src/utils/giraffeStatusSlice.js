@@ -1,13 +1,12 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-/* This slice keeps track of status of every giraffe */
-
+/* This slice keeps track of the status of every giraffe */
 
 const giraffeStatusSlice = createSlice({
     
     name : "giraffeStatusSlice",
 
-    /* Initially, all the giraffe will be healthy. */
+    /* Initially, all the giraffes will be healthy. */
     initialState : {
         giraffesStatus : [{status : "HEALTHY"},{status : "HEALTHY"},
         {status : "HEALTHY"},{status : "HEALTHY"},{status : "HEALTHY"}]

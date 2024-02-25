@@ -1,5 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 
+/*This slices contains information about healths of all 15 animals */
 
 const animalsHealthSlice =  createSlice({
     name : "animalHealthSlice",
