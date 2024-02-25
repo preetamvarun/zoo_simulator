@@ -29,7 +29,7 @@ const GiraffeCard = ({health, index}) => {
 
   /* If animals are fed then animate the food */
   return (
-    <div className='relative overflow-hidden text-center m-1 lg:w-46 border-2 border-green-500 border-solid'>
+    <div className='relative overflow-hidden text-center m-1 md:w-46 lg:w-52'>
 
         {/* Giraffe Image Goes In Here */}
       <div className='overflow-hidden '>

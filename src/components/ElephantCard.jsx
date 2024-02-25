@@ -27,7 +27,7 @@ const ElephantCard = ({health, index}) => {
   const currentElephantStatus = elephantStatusSlice.elephantsStatus[index].status;
 
   return (
-    <div className='relative text-center overflow-hidden m-1 lg:w-46 border-2 border-green-500 border-solid'>
+    <div className='relative text-center overflow-hidden m-1 md:w-46 lg:w-52'>
 
       {/* Elephant Image Goes In Here */}
       <div className='overflow-hidden'>

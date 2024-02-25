@@ -13,7 +13,13 @@ const MainShelter = () => {
 
     const currentAnimalsHealth = animalsHealthSlice.animalsHealth;
 
-    const [currentTime, setCurrentTime] = useState(new Date())
+    const [currentTime, setCurrentTime] = useState(new Date());
+
+    useEffect(() => {
+        setInterval(() => {
+            setCurrentTime(new Date());
+        }, 1000)
+    }, [currentTime])
 
     /* Get the dispatch function to make changes to the slices in the store  */
     const dispatch = useDispatch();
@@ -85,17 +91,17 @@ const MainShelter = () => {
     return (
         <>
             <div className="flex flex-row justify-around items-center py-2 mt-2">
-                <div className="inline-block border-2 border-solid bg-white
+                <div className="inline-block border-2 border-solid
                 px-[8px] py-[2px] sm:px-[12px] sm:py-[2px] Btn-Provoke rounded-xl overflow-hidden
                 ">
-                    <button onClick={handleProvoke} className="px-6 py-1 text-green-900"
-                    >Provoke</button>
+                    <button onClick={handleProvoke} className="px-6 py-1 tracking-wide"
+                    >PROVOKE</button>
                 </div>
                 <p className="inline-block text-[#FFD700] tracking-wide font-black sm:text-xl text-center"> TIME - <span className="bg-white px-3 py-1 rounded-lg text-green-700">{currentTime.toLocaleTimeString()}</span></p>
-                <div className="inline-block border-2 border-solid border-green-400 px-[8px] py-[2px] sm:px-[12px] sm:py-[2px]
-                Btn-Feed rounded-xl overflow-hidden"
+                <div className="inline-block px-[8px] py-[2px] sm:px-[12px] sm:py-[2px]
+                Btn-Feed rounded-xl overflow-hidden border-2 border-solid"
                 >
-                <button onClick={handleFeed}  className="px-9 py-1 text-white inline-block">Feed</button>
+                <button onClick={handleFeed} className="px-9 py-1 tracking-wide">FEED</button>
                 </div>
             </div>
             {/* Intially, our 2D health array will be [[100,100,100,100,100],[100,100,100,100,100],

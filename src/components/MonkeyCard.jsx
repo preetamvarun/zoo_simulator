@@ -29,7 +29,7 @@ const MonkeyCard = ({health, index}) => {
   return (
 
     /* If there are any overflows to this div just make sure it is hidden */
-    <div className='relative overflow-hidden m-1 lg:w-46 border-2 border-green-500 border-solid'>
+    <div className='relative overflow-hidden m-1 md:w-46 lg:w-52'>
 
       {/* Displaying the stick image to which monkey hangs */}
       <img src= {stick} className='absolute -top-4 z-50 sm:-top-6 lg:-top-[50px] md:-top-[36px]'/> 

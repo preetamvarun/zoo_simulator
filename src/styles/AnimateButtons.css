@@ -1,19 +1,25 @@
 .Btn-Provoke, .Btn-Feed {
-    color : white;
+    color : #FFD700;
     position: relative;
+    transition: color 1500ms ease;
+    font-weight: bolder;
+}
+
+.Btn-Provoke:hover, .Btn-Feed:hover{
+    color : white;
 }
 
 .Btn-Provoke::before, .Btn-Feed::before{
     position: absolute;
     content: '';
-    background-color: darkgreen;
+    background-color: green;
     top : 0;
     right : 0;
     left : 0;
     bottom : 0;
     z-index: -1;
-    transform : scaleX(0);
-    transition: transform 500ms ease-in;
+    transform: scaleX(0);
+    transition: transform 1500ms ease;
 }
 
 .Btn-Provoke::before {
