@@ -58,4 +58,4 @@ const GiraffeCard = ({health, index}) => {
   )
 }
 
-export default GiraffeCard
+export default GiraffeCard;
