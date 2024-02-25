@@ -42,11 +42,12 @@ const MonkeyCard = ({health, index}) => {
         backgroundImage : `url(${TreeTrunk})`,
         backgroundPosition : 'center'
       }}>
+
         {/* Display health percentage only if the monkey is alive */}
         {currentMonkeyStatus !== "DEAD" && <p> HEALTH : {health}%</p> }
         <p> STATUS : {currentMonkeyStatus}</p>
       </div>
-
+      
       <img src= {Food} className={`absolute top-0 left-[1/2] w-10/12 translate-y-1/2 -translate-x-2/3
       ${animalsFeedStatus && currentMonkeyStatus !== "DEAD" && 'animate-feed'}`}/>
 
