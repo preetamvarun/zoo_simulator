@@ -90,9 +90,7 @@ const MainShelter = () => {
                     <button onClick={handleProvoke} className="px-6 py-1 text-white"
                     >Provoke</button>
                 </div>
-                <div className="inline-block text-white">
-                    <p>{currentTime.toLocaleTimeString()}</p>
-                </div>
+                <p className="inline-block text-[#FFD700] text-xl font-jungle-fever text-center"> TIME : {currentTime.toLocaleTimeString()}</p>
                 <div className="inline-block border-2 border-solid border-green-400 px-[12px] py-[2px]
                 Btn-Feed"
                 >
