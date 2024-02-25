@@ -2,7 +2,10 @@ import React from 'react';
 import GiraffeCard from './GiraffeCard';
 import { v4 as uuidv4 } from 'uuid';
 
-/* This Giraffe Shelter Component renders 5 different monkeys */
+/* This Giraffe Shelter Component renders 5 different giraffe card component */
+
+/* Getting the Giraffes 1D health array as prop */
+
 const GiraffeShelter = ({ giraffesHealth }) => {
   return (
     <div className='rounded-md py-2 flex flex-row justify-evenly'>

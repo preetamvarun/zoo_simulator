@@ -16,6 +16,7 @@ const GiraffeCard = ({health, index}) => {
 
   const animalsFeedStatus = useSelector((store) => store.animalsHealth).areAnimalsFed
 
+  /* Get the dispatched function to make changes to a particular slices in the store */
   const dispatch = useDispatch();
 
   /* Update the status of the current giraffe when the health has changed */
@@ -27,7 +28,6 @@ const GiraffeCard = ({health, index}) => {
   const currentGiraffeStatus = giraffeStatusSlice.giraffesStatus[index].status;
 
   /* If animals are fed then animate the food */
-
   return (
     <div className='relative overflow-hidden text-center lg:w-56 m-1 md:w-46'>
 
@@ -41,10 +41,13 @@ const GiraffeCard = ({health, index}) => {
         backgroundImage : `url(${TreeTrunk})`,
         backgroundPosition : 'center'
       }}>
+        {/* Display health percentage only if the giraffe is alive */}
         {currentGiraffeStatus !== "DEAD" && <p> HEALTH : {health}%</p>}
         <p> STATUS : {currentGiraffeStatus}</p>
       </div>
 
+      {/* Animate the food image when user clicks the feed button. Only Feed if that particular 
+      giraffe is alive */}
       <img src= {Food} className={`absolute top-0 left-[1/2] w-10/12 translate-y-1/2 -translate-x-2/3
       ${animalsFeedStatus && currentGiraffeStatus !== "DEAD" && 'animate-feed'}`}/>
 

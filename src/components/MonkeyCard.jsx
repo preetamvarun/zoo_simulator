@@ -13,8 +13,9 @@ const MonkeyCard = ({health, index}) => {
   /* subscribe to the monkey status slice from the store */
   const monkeyStatusSlice = useSelector((store) => store.monkeyStatus)
 
-  const animalsFeedStatus = useSelector((store) => store.animalsHealth).areAnimalsFed
+  const animalsFeedStatus = useSelector((store) => store.animalsHealth)?.areAnimalsFed
 
+  /* Get the dispatched function to make changes to a particular slices in the store */
   const dispatch = useDispatch();
 
   /* Update the status of the current monkey when the health has changed */
@@ -23,11 +24,14 @@ const MonkeyCard = ({health, index}) => {
   }, [health])
 
   /* Get the current status of the monkey */
-  const currentMonkeyStatus = monkeyStatusSlice.monkeysStatus[index].status;
+  const currentMonkeyStatus = monkeyStatusSlice?.monkeysStatus[index]?.status;
 
   return (
+
+    /* If there are any overflows to this div just make sure it is hidden */
     <div className='relative overflow-hidden lg:w-56 m-1 md:w-46'>
 
+      {/* Displaying the stick image to which monkey hangs */}
       <img src= {stick} className='absolute -top-4 z-50 sm:-top-6 lg:-top-[50px] md:-top-[36px]'/> 
 
 
@@ -48,6 +52,8 @@ const MonkeyCard = ({health, index}) => {
         <p> STATUS : {currentMonkeyStatus}</p>
       </div>
 
+      {/* Animate the food image when user clicks the feed button. Only Feed if that particular 
+      monkey is alive */}
       <img src= {Food} className={`absolute top-0 left-[1/2] w-10/12 translate-y-1/2 -translate-x-2/3
       ${animalsFeedStatus && currentMonkeyStatus !== "DEAD" && 'animate-feed'}`}/>
 

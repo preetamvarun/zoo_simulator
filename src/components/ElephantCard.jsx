@@ -14,9 +14,11 @@ const ElephantCard = ({health, index}) => {
 
   const animalsFeedStatus = useSelector((store) => store.animalsHealth).areAnimalsFed
 
+  /* get the dispatch function so that you can make changes to a particular slice in the store*/
   const dispatch = useDispatch()
 
-  /* Update the status of the current elephant when the health has changed */
+  /* Update the status of the current elephant when the health has changed.
+  Health is passed in the dependency array of useEffect hook */
   useEffect(() => {
     dispatch(setElephantStatus({health, index}))
   }, [health])
@@ -38,13 +40,16 @@ const ElephantCard = ({health, index}) => {
         backgroundImage : `url(${TreeTrunk})`,
         backgroundPosition : 'center'
       }}>
+        {/* Display health percentage only if the elephant is alive */}
         {currentElephantStatus !== "DEAD" && <p> HEALTH : {health}%</p>}
         <p> STATUS : {currentElephantStatus}</p>
       </div>
 
+       {/* Animate the food image when user clicks the feed button. Only Feed if that particular 
+      elephant is alive */}
       <img src= {Food} className={`absolute top-0 left-[1/2] w-10/12 translate-y-1/2 -translate-x-2/3
       ${animalsFeedStatus && currentElephantStatus !== "DEAD" && 'animate-feed'}`}/>
-
+      
     </div>
   )
 }
