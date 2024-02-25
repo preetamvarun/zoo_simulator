@@ -75,7 +75,7 @@ const MainShelter = () => {
         const intervalID = setInterval(() => {
             updateAnimalsHealthRandomly();
             /* 1 hour => 60 minutes => 60 * 60 seconds => 3600 seconds => 3600 * 1000 milliseconds */
-        }, 3000);
+        }, 3600 * 1000);
         /* clear out the intervals */
         return () => clearInterval(intervalID);
     }, [animalsHealthSlice])
