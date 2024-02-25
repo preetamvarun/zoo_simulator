@@ -1,7 +1,7 @@
 import ElephantShelter from "./ElephantShelter";
 import GiraffeShelter from "./GiraffeShelter";
 import MonkeyShelter from "./MonkeyShelter";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { updateAnimalsHealth, updateFeedStatus } from "../utils/animalsHealthSlice";
 import '../styles/AnimateButtons.css';
@@ -12,6 +12,8 @@ const MainShelter = () => {
     const animalsHealthSlice = useSelector((store) => store.animalsHealth)
 
     const currentAnimalsHealth = animalsHealthSlice.animalsHealth;
+
+    const [currentTime, setCurrentTime] = useState(new Date())
 
     /* Get the dispatch function to make changes to the slices in the store  */
     const dispatch = useDispatch();
@@ -71,6 +73,7 @@ const MainShelter = () => {
 
     const handleProvoke = (evt) => {
         updateAnimalsHealthRandomly();
+        setCurrentTime(new Date(currentTime.getTime() + 60 * 60 * 1000));
         evt.preventDefault();
     }
 
@@ -86,6 +89,9 @@ const MainShelter = () => {
                 px-[12px] py-[2px] Btn-Provoke">
                     <button onClick={handleProvoke} className="px-6 py-1 text-white"
                     >Provoke</button>
+                </div>
+                <div className="inline-block text-white">
+                    <p>{currentTime.toLocaleTimeString()}</p>
                 </div>
                 <div className="inline-block border-2 border-solid border-green-400 px-[12px] py-[2px]
                 Btn-Feed"
