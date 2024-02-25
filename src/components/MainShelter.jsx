@@ -16,9 +16,10 @@ const MainShelter = () => {
     const [currentTime, setCurrentTime] = useState(new Date());
 
     useEffect(() => {
-        setInterval(() => {
+        const intervalID = setInterval(() => {
             setCurrentTime(new Date());
-        }, 1000)
+        }, 60 * 1000);
+        return () => clearInterval(intervalID);
     }, [currentTime])
 
     /* Get the dispatch function to make changes to the slices in the store  */
@@ -97,7 +98,9 @@ const MainShelter = () => {
                     <button onClick={handleProvoke} className="px-6 py-1 tracking-wide"
                     >PROVOKE</button>
                 </div>
-                <p className="inline-block text-[#FFD700] tracking-wide font-black sm:text-xl text-center"> TIME - <span className="bg-white px-3 py-1 rounded-lg text-green-700">{currentTime.toLocaleTimeString()}</span></p>
+                <p className="inline-block text-[#FFD700] tracking-wide font-black sm:text-xl text-center"> 
+                TIME - <span className="bg-white px-3 py-1 rounded-lg text-green-700">
+                {currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span></p>
                 <div className="inline-block px-[8px] py-[2px] sm:px-[12px] sm:py-[2px]
                 Btn-Feed rounded-xl overflow-hidden border-2 border-solid"
                 >
