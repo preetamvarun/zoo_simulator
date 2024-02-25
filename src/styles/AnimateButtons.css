@@ -1,9 +1,9 @@
-.Btn {
+.Btn-Provoke, .Btn-Feed {
     color : white;
     position: relative;
 }
 
-.Btn::before{
+.Btn-Provoke::before, .Btn-Feed::before{
     position: absolute;
     content: '';
     background-color: darkgreen;
@@ -13,10 +13,17 @@
     bottom : 0;
     z-index: -1;
     transform : scaleX(0);
-    transform-origin: left;
     transition: transform 500ms ease-in;
 }
 
-.Btn:hover::before{
+.Btn-Provoke::before {
+    transform-origin: left;
+}
+
+.Btn-Feed::before {
+    transform-origin: right;
+}
+
+.Btn-Provoke:hover::before,.Btn-Feed:hover::before{
     transform: scaleX(1);
 }

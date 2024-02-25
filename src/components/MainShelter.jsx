@@ -4,7 +4,7 @@ import MonkeyShelter from "./MonkeyShelter";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { updateAnimalsHealth, updateFeedStatus } from "../utils/animalsHealthSlice";
-import '../styles/Btn.css';
+import '../styles/AnimateButtons.css';
 
 const MainShelter = () => {
 
@@ -64,11 +64,12 @@ const MainShelter = () => {
         <>
             <div className="flex flex-row justify-around items-center py-2">
                 <div className="inline-block border-2 border-solid border-green-400
-                px-[12px] py-[2px] Btn">
+                px-[12px] py-[2px] Btn-Provoke">
                     <button onClick={handleProvoke} className="px-6 py-1 text-white"
                     >Provoke</button>
                 </div>
-                <div className="inline-block border-2 border-solid border-green-400 px-[12px] py-[2px]"
+                <div className="inline-block border-2 border-solid border-green-400 px-[12px] py-[2px]
+                Btn-Feed"
                 >
                     <button onClick={handleFeed}  className="px-9 py-1 text-white inline-block">Feed</button>
                 </div>
