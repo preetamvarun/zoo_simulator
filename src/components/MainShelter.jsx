@@ -94,7 +94,7 @@ const MainShelter = () => {
 
     return (
         <>
-            <div className="flex flex-row justify-around items-center py-2 mt-2">
+            <div className="flex flex-column md:flex-row justify-around items-center py-2 mt-2">
                 <div className="inline-block border-2 border-solid
                 px-[8px] py-[2px] sm:px-[12px] sm:py-[2px] Btn-Provoke rounded-xl overflow-hidden
                 ">
