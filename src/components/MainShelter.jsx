@@ -93,15 +93,18 @@ const MainShelter = () => {
     }
 
     return (
-        <>
-            <div className="flex flex-column md:flex-row justify-around items-center py-2 mt-2">
-                <div className="inline-block border-2 border-solid
-                px-[8px] py-[2px] sm:px-[12px] sm:py-[2px] Btn-Provoke rounded-xl overflow-hidden
+        <div className="flex flex-col justify-evenly items-center min-h-screen">
+            <div className="py-2 mt-2 flex flex-col justify-center items-center
+            md:flex-row md:justify-evenly md:items-center
+            md:w-full">
+                <div className="inline-block
+                px-[8px] py-[2px] border-2 border-solid border-white
+                sm:px-[12px] sm:py-[2px] Btn-Provoke rounded-xl overflow-hidden
                 ">
                     <button onClick={handleProvoke} className="px-6 py-1 tracking-wide"
                     >PROVOKE</button>
                 </div>
-                <p className="inline-block text-[#FFD700] tracking-wide font-black sm:text-xl text-center"> 
+                <p className="inline-block my-4 text-[#FFD700] tracking-wide font-black sm:text-xl text-center"> 
                 TIME - <span className="bg-white px-3 py-1 rounded-lg text-green-700">
                 {/* Display the timer with hours and minutes */}
                 {currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span></p>
@@ -115,10 +118,12 @@ const MainShelter = () => {
             [100,100,100,100,100]]. Pass 0th index 1D array to monkey shelter component, 
             1st index 1D array to elephant shelter component and 2nd index 1D array to 
             Giraffe shelter component */}
-            <MonkeyShelter monkeysHealth = {currentAnimalsHealth[0]}/>
-            <ElephantShelter elephantsHealth = {currentAnimalsHealth[1]}/>
-            <GiraffeShelter giraffesHealth = {currentAnimalsHealth[2]}/>
-        </>
+            <div className="md:w-full">
+                <MonkeyShelter monkeysHealth = {currentAnimalsHealth[0]}/>
+                <ElephantShelter elephantsHealth = {currentAnimalsHealth[1]}/>
+                <GiraffeShelter giraffesHealth = {currentAnimalsHealth[2]}/>
+            </div>
+        </div>
     )
 }
 
