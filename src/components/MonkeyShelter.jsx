@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 /* This Monkey Shelter Component renders 5 different monkeys */
 const MonkeyShelter = ({ monkeysHealth }) => {
   return (
-    <div className='rounded-md py-2 flex flex-row justify-evenly'>
+    <div className='rounded-md py-2 sm:flex sm:flex-row sm:justify-evenly flex'>
       {
         /* Make sure each monkey gets an unique key */
         monkeysHealth.map((eachMonkeyHealth, index) => <MonkeyCard health = {eachMonkeyHealth}

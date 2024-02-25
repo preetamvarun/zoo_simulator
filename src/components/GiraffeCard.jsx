@@ -29,7 +29,7 @@ const GiraffeCard = ({health, index}) => {
   /* If animals are fed then animate the food */
 
   return (
-    <div className='relative w-56 overflow-hidden text-center'>
+    <div className='relative overflow-hidden text-center lg:w-56 m-1 md:w-46'>
 
         {/* Giraffe Image Goes In Here */}
       <div className='overflow-hidden '>
@@ -37,7 +37,7 @@ const GiraffeCard = ({health, index}) => {
       </div>
 
       {/* Contents Of The Card */}
-      <div className='text-[#FFD700] tracking-widest text-sm mt-1 font-semibold text-center overflow-hidden' style={{
+      <div className='text-[#FFD700] text-[8px] mt-2 sm:text-[10px] sm:tracking-widest md:text-sm sm:mt-1 sm:font-semibold text-center overflow-hidden' style={{
         backgroundImage : `url(${TreeTrunk})`,
         backgroundPosition : 'center'
       }}>

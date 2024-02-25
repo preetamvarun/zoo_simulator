@@ -3,4 +3,3 @@ package-lock.json
 /dist
 /.parcel-cache
 /build
-/tailwind.config.js

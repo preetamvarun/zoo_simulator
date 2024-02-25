@@ -25,15 +25,15 @@ const ElephantCard = ({health, index}) => {
   const currentElephantStatus = elephantStatusSlice.elephantsStatus[index].status;
 
   return (
-    <div className='relative text-center w-56 overflow-hidden'>
+    <div className='relative text-center overflow-hidden lg:w-56 m-1 md:w-46'>
 
       {/* Elephant Image Goes In Here */}
       <div className='overflow-hidden'>
-        <img src={ElephantHealthy} className = 'scale-110 max-w-full max-h-full w-full h-auto' alt='healthy-elephant'/> 
+        <img src={ElephantHealthy} className = 'scale-125 sm:scale-110 max-w-full max-h-full w-full h-auto' alt='healthy-elephant'/> 
       </div>
 
       {/* Contents Of The Card */}
-      <div className='text-[#FFD700] tracking-widest text-sm mt-1 font-semibold text-center overflow-hidden' 
+      <div className='text-[#FFD700] text-[8px] mt-2 sm:text-[10px] sm:tracking-widest md:text-sm sm:mt-1 sm:font-semibold text-center overflow-hidden'
       style={{
         backgroundImage : `url(${TreeTrunk})`,
         backgroundPosition : 'center'

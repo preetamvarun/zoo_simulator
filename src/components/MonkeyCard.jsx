@@ -26,18 +26,18 @@ const MonkeyCard = ({health, index}) => {
   const currentMonkeyStatus = monkeyStatusSlice.monkeysStatus[index].status;
 
   return (
-    <div className='relative overflow-hidden w-56 m-1'>
+    <div className='relative overflow-hidden lg:w-56 m-1 md:w-46'>
 
-      <img src= {stick} className='absolute z-50 -top-[50px] '/> 
+      <img src= {stick} className='absolute -top-4 z-50 sm:-top-6 lg:-top-[50px] md:-top-[36px]'/> 
 
 
       {/* This div contains the monkey image */}
       <div className='overflow-hidden relative'>
-        <img src={MonkeyHealthy} className = 'scale-110 max-w-full max-h-full w-full h-auto' alt='healthy-monkey'/> 
+        <img src={MonkeyHealthy} className = 'scale-125 max-w-full max-h-full w-full h-auto' alt='healthy-monkey'/> 
       </div>
 
       {/* contents of the card */}
-      <div className='text-[#FFD700] tracking-widest text-sm mt-1 font-semibold text-center overflow-hidden' 
+      <div className='text-[#FFD700] text-[8px] mt-2 sm:text-[10px] sm:tracking-widest md:text-sm sm:mt-1 sm:font-semibold text-center overflow-hidden' 
       style={{
         backgroundImage : `url(${TreeTrunk})`,
         backgroundPosition : 'center'
