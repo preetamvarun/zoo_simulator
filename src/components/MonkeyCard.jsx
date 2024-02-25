@@ -26,7 +26,7 @@ const MonkeyCard = ({health, index}) => {
   const currentMonkeyStatus = monkeyStatusSlice.monkeysStatus[index].status;
 
   return (
-    <div className='relative overflow-hidden w-54 m-1'>
+    <div className='relative overflow-hidden w-56 m-1'>
 
       <img src= {stick} className='absolute z-50 -top-[50px] '/> 
 
@@ -47,7 +47,7 @@ const MonkeyCard = ({health, index}) => {
         {currentMonkeyStatus !== "DEAD" && <p> HEALTH : {health}%</p> }
         <p> STATUS : {currentMonkeyStatus}</p>
       </div>
-      
+
       <img src= {Food} className={`absolute top-0 left-[1/2] w-10/12 translate-y-1/2 -translate-x-2/3
       ${animalsFeedStatus && currentMonkeyStatus !== "DEAD" && 'animate-feed'}`}/>
 

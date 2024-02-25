@@ -62,7 +62,7 @@ const MainShelter = () => {
 
     return (
         <>
-            <div className="flex flex-row justify-around items-center py-2">
+            <div className="flex flex-row justify-around items-center border-2 border-solid border-red py-4">
                 <div className="inline-block border-2 border-solid border-green-400
                 px-[12px] py-[2px] Btn-Provoke">
                     <button onClick={handleProvoke} className="px-6 py-1 text-white"
